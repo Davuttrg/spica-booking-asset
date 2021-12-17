@@ -1,0 +1,329 @@
+# BUCKET - Room
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: spica-booking-asset-room-bucket
+spec:
+  title: Room
+  description: Describe your new bucket
+  icon: view_stream
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    description:
+      type: textarea
+      title: description
+      description: Description of the description input
+      options:
+        position: bottom
+    head_image:
+      type: storage
+      title: head_image
+      description: Description of the head_image input
+      options:
+        position: bottom
+    images:
+      type: array
+      title: images
+      description: Description of the images input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: storage
+    category:
+      type: relation
+      title: category
+      description: Description of the category input
+      options:
+        position: bottom
+      relationType: onetoone
+      dependent: false
+      primary: name
+      bucket:
+        resourceFieldRef:
+          schemaName: spica-booking-asset-category-bucket
+    properties:
+      type: relation
+      title: properties
+      description: Description of the properties input
+      options:
+        position: bottom
+      relationType: onetomany
+      dependent: false
+      primary: name
+      bucket:
+        resourceFieldRef:
+          schemaName: spica-booking-asset-properties-bucket
+  acl:
+    write: true==true
+    read: true==true
+  order: 17
+---
+# BUCKET - Rezervasyon
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: spica-booking-asset-rezervasyon-bucket
+spec:
+  title: Rezervasyon
+  description: Describe your new bucket
+  icon: view_stream
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    mail:
+      type: string
+      title: mail
+      description: Description of the mail input
+      options:
+        position: bottom
+    phone_number:
+      type: string
+      title: phone_number
+      description: Description of the phone_number input
+      options:
+        position: bottom
+    check_in:
+      type: date
+      title: check_in
+      description: Description of the check_in input
+      options:
+        position: bottom
+    check_out:
+      type: date
+      title: check_out
+      description: Description of the check_out input
+      options:
+        position: bottom
+    room:
+      type: relation
+      title: room
+      description: Description of the room input
+      options:
+        position: bottom
+      relationType: onetoone
+      dependent: false
+      primary: name
+      bucket:
+        resourceFieldRef:
+          schemaName: spica-booking-asset-room-bucket
+    adult:
+      type: number
+      title: adult
+      description: Description of the adult input
+      options:
+        position: bottom
+    children:
+      type: number
+      title: children
+      description: Description of the children input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 18
+---
+# BUCKET - Category
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: spica-booking-asset-category-bucket
+spec:
+  title: Category
+  description: Describe your new bucket
+  icon: view_stream
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 19
+---
+# BUCKET - Site Configurations
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: spica-booking-asset-site-configurations-bucket
+spec:
+  title: Site Configurations
+  description: Describe your new bucket
+  icon: view_stream
+  primary: site_name
+  readOnly: false
+  history: false
+  properties:
+    contact:
+      type: object
+      title: contact
+      description: Description of the contact input
+      options:
+        position: bottom
+      properties:
+        adress_map:
+          type: location
+          title: adress_map
+          description: Description of the adress_map input
+          options:
+            position: bottom
+          locationType: Point
+        adress:
+          type: string
+          title: adress
+          description: Description of the adress input
+          options:
+            position: bottom
+        phone_number:
+          type: string
+          title: phone_number
+          description: Description of the phone_number input
+          options:
+            position: bottom
+        mail:
+          type: string
+          title: mail
+          description: Description of the mail input
+          options:
+            position: bottom
+        facebook_link:
+          type: string
+          title: facebook_link
+          description: Description of the facebook_link input
+          options:
+            position: bottom
+        instagram_link:
+          type: string
+          title: instagram_link
+          description: Description of the instagram_link input
+          options:
+            position: bottom
+    homepage:
+      type: object
+      title: homepage
+      description: Description of the homepage input
+      options:
+        position: bottom
+      properties:
+        logo:
+          type: storage
+          title: logo
+          description: Description of the logo input
+          options:
+            position: bottom
+        header:
+          type: storage
+          title: header
+          description: Description of the header input
+          options:
+            position: bottom
+        slides:
+          type: array
+          title: slides
+          description: Description of the slides input
+          options:
+            position: bottom
+          items:
+            title: Title of the items
+            type: storage
+    site_name:
+      type: string
+      title: site_name
+      description: Description of the site_name input
+      options:
+        position: bottom
+    about:
+      type: textarea
+      title: about
+      description: Description of the about input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 20
+---
+# BUCKET - Properties
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: spica-booking-asset-properties-bucket
+spec:
+  title: Properties
+  description: Describe your new bucket
+  icon: view_stream
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+  acl:
+    write: true==true
+    read: true==true
+  order: 21
+---
+# BUCKET - Activities
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: spica-booking-asset-activities-bucket
+spec:
+  title: Activities
+  description: Describe your new bucket
+  icon: view_stream
+  primary: name
+  readOnly: false
+  history: false
+  properties:
+    name:
+      type: string
+      title: name
+      description: Description of the name input
+      options:
+        position: bottom
+    description:
+      type: textarea
+      title: description
+      description: Description of the row
+      options:
+        position: right
+    images:
+      type: array
+      title: images
+      description: Description of the images input
+      options:
+        position: bottom
+      items:
+        title: Title of the items
+        type: storage
+  acl:
+    write: true==true
+    read: true==true
+  order: 22
