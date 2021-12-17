@@ -6,7 +6,7 @@ metadata:
 spec:
   title: Room
   description: Describe your new bucket
-  icon: view_stream
+  icon: bed
   primary: name
   readOnly: false
   history: false
@@ -65,7 +65,7 @@ spec:
   acl:
     write: true==true
     read: true==true
-  order: 17
+  order: 95
 ---
 # BUCKET - Rezervasyon
 apiVersion: bucket/v1
@@ -75,7 +75,7 @@ metadata:
 spec:
   title: Rezervasyon
   description: Describe your new bucket
-  icon: view_stream
+  icon: bed
   primary: name
   readOnly: false
   history: false
@@ -137,7 +137,7 @@ spec:
   acl:
     write: true==true
     read: true==true
-  order: 18
+  order: 96
 ---
 # BUCKET - Category
 apiVersion: bucket/v1
@@ -147,7 +147,7 @@ metadata:
 spec:
   title: Category
   description: Describe your new bucket
-  icon: view_stream
+  icon: bed
   primary: name
   readOnly: false
   history: false
@@ -161,7 +161,7 @@ spec:
   acl:
     write: true==true
     read: true==true
-  order: 19
+  order: 97
 ---
 # BUCKET - Site Configurations
 apiVersion: bucket/v1
@@ -171,7 +171,7 @@ metadata:
 spec:
   title: Site Configurations
   description: Describe your new bucket
-  icon: view_stream
+  icon: bed
   primary: site_name
   readOnly: false
   history: false
@@ -263,7 +263,7 @@ spec:
   acl:
     write: true==true
     read: true==true
-  order: 20
+  order: 98
 ---
 # BUCKET - Properties
 apiVersion: bucket/v1
@@ -273,7 +273,7 @@ metadata:
 spec:
   title: Properties
   description: Describe your new bucket
-  icon: view_stream
+  icon: bed
   primary: name
   readOnly: false
   history: false
@@ -287,7 +287,7 @@ spec:
   acl:
     write: true==true
     read: true==true
-  order: 21
+  order: 99
 ---
 # BUCKET - Activities
 apiVersion: bucket/v1
@@ -297,7 +297,7 @@ metadata:
 spec:
   title: Activities
   description: Describe your new bucket
-  icon: view_stream
+  icon: bed
   primary: name
   readOnly: false
   history: false
@@ -326,4 +326,4 @@ spec:
   acl:
     write: true==true
     read: true==true
-  order: 22
+  order: 100
